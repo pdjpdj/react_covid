@@ -3,7 +3,6 @@ import {
   countriesActionCreators,
   CountriesAction,
   CountryItem,
-  RapidCountryItem,
 } from '../reducers/countries';
 import {countryActionCreators, CountryAction} from '../reducers/country';
 import {totalActionCreators, TotalAction} from '../reducers/total';
@@ -42,32 +41,6 @@ export async function fetchCountries(
       });
 
       countries = await response.json();
-
-      // the other API doesn't have the lon/lat
-      const response2 = await fetch(
-        'https://covid-19-data.p.rapidapi.com/help/countries',
-        {
-          method: 'GET',
-          headers: {
-            // key removed from rapid API:
-            'x-rapidapi-key':
-              '0162f178d6msh3be422d1bbc3758p1a2e2ejsn3cb228873be2',
-            'x-rapidapi-host': 'covid-19-data.p.rapidapi.com',
-          },
-        },
-      );
-
-      const countries2: RapidCountryItem[] = await response2.json();
-      countries.map((country) => {
-        const rapidCountries: RapidCountryItem[] = countries2.filter(
-          (value) => value.alpha2code === country.ISO2,
-        );
-        if (rapidCountries && rapidCountries.length > 0) {
-          country.latitude = rapidCountries[0].latitude;
-          country.longitude = rapidCountries[0].longitude;
-        }
-        return true;
-      });
 
       localStorage.setItem(
         COUNTRIES_STORAGE_KEY,

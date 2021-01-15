@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import TotalPage from './pages/TotalPage';
+import GlobalTotal from './pages/GlobalTotal';
+import CountryList from './pages/CountryList';
+import CountryTotal from './pages/CountryTotal';
 
 function App() {
+  const [selectedCountry, setSelectedCountry] = useState('');
   return (
     <div className="App">
-      <TotalPage />
+      <CountryList selectCountry={setSelectedCountry} selected={selectedCountry}/>
+      <div>
+        <GlobalTotal />
+        <CountryTotal slug={selectedCountry}/>
+      </div>
     </div>
   );
 }

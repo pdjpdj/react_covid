@@ -7,7 +7,7 @@ import '../components/Totals.css'
 interface TotalPageProps {
 }
 
-const TotalPage: React.FC<TotalPageProps> = (props: TotalPageProps) => {
+const GlobalTotal: React.FC<TotalPageProps> = (props: TotalPageProps) => {
   const [state, dispatch] = useReducer(totalReducer, totalInitialState);
 
   const {loading, totals, error} = state;
@@ -42,4 +42,4 @@ const TotalPage: React.FC<TotalPageProps> = (props: TotalPageProps) => {
   );
 };
 
-export default TotalPage;
+export default GlobalTotal;
