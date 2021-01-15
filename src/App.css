@@ -1,5 +1,14 @@
-.App {
+.app {
   text-align: center;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.app-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
 }

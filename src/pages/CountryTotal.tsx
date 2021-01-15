@@ -24,7 +24,7 @@ const CountryTotal: React.FC<CountryTotalProps> = (props: CountryTotalProps) => 
   if (loading) {
     return (
       <div>
-        loading
+        No country selected
       </div>
     );
   }

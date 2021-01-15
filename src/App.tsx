@@ -7,9 +7,11 @@ import CountryTotal from './pages/CountryTotal';
 function App() {
   const [selectedCountry, setSelectedCountry] = useState('');
   return (
-    <div className="App">
-      <CountryList selectCountry={setSelectedCountry} selected={selectedCountry}/>
-      <div>
+    <div className='app'>
+      <div className='app-sub'>
+        <CountryList selectCountry={setSelectedCountry} selected={selectedCountry}/>
+      </div>
+      <div className='app-sub'>
         <GlobalTotal />
         <CountryTotal slug={selectedCountry}/>
       </div>

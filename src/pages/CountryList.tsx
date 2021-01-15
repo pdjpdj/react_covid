@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { fetchCountries } from '../api/covid19Data';
 import '../components/Totals.css'
 import '../components/Countries.css'
@@ -11,6 +11,7 @@ interface CountryListProps {
 
 const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
   const [state, dispatch] = useReducer(countriesReducer, countriesInitialState);
+  const [countryName, setCountryName] = useState('');
 
   const {loading, countries, error} = state;
 
@@ -19,6 +20,10 @@ const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
   useEffect(() => {
     fetchCountries(dispatch);
   }, []);
+
+  const handleInputChange = (event: any) => {
+    setCountryName(event.target.value);
+  }
 
   if (loading) {
     return (
@@ -42,11 +47,20 @@ const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
         Countries
       </div>
       <div className='countries-list'>
-        {countries?.sort((a, b) => a.Country > b.Country ? 1 : -1)
+        <div className='table-row table-row-alt country-item'>
+          <input
+            type='text'
+            value={countryName}
+            placeholder='Enter country name to filter'
+            onChange={handleInputChange}
+            className='countries-input'/>
+        </div>
+        {countries?.filter(country => country.Country.toLowerCase().indexOf(countryName.toLowerCase()) > -1)
+        .sort((a, b) => a.Country > b.Country ? 1 : -1)
         .map((country, index) => (
           <div 
             key={country.Slug} 
-            className={`table-row ${index%2 ? 'table-row-alt' : ''} ${selected===country.Slug ? 'table-row-selected' : ''}`}
+            className={`table-row ${index%2 ? 'table-row-alt' : ''} ${selected===country.Slug ? 'table-row-selected' : ''} country-item`}
             onClick={() => selectCountry(country.Slug)}>
               {country.Country}
           </div>

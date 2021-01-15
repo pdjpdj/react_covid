@@ -20,57 +20,78 @@ function CountryTotals({totals}: CountryTotalsProps) {
   return (
     <div>
       <div>
-        <div >
+        <div className='totals-subheader'>
           Latest ({formatMidDate(new Date(totals[totals.length - 1].Date))})
         </div>
-        <div>
-          Confirmed:
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Confirmed:
+          </div>
+          <div className='table-row-data'>
             {(
               totals[totals.length - 1].Confirmed -
               totals[totals.length - 2].Confirmed
             ).toLocaleString()}
+          </div>
         </div>
-        <div>
-          Deaths:
-          {(
-            totals[totals.length - 1].Deaths -
-            totals[totals.length - 2].Deaths
-          ).toLocaleString()}
+        <div className='table-row table-row-alt'>
+          <div className='table-row-label'>
+            Deaths:
+          </div>
+          <div className='table-row-data'>
+            {(
+              totals[totals.length - 1].Deaths -
+              totals[totals.length - 2].Deaths
+            ).toLocaleString()}
+          </div>
         </div>
-        <div>
-          Recovered:
-          {(
-            totals[totals.length - 1].Recovered -
-            totals[totals.length - 2].Recovered
-          ).toLocaleString()}
-        </div>
-        <div>
-          Active:
-          {(
-            totals[totals.length - 1].Active -
-            totals[totals.length - 2].Active
-          ).toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Recovered:
+          </div>
+          <div className='table-row-data'>
+            {(
+              totals[totals.length - 1].Recovered -
+              totals[totals.length - 2].Recovered
+            ).toLocaleString()}
+          </div>
         </div>
       </div>
       <div>
-        <div>
+        <div className='totals-subheader'>
           All time
         </div>
-        <div>
-          Confirmed:
-          {totals[totals.length - 1].Confirmed.toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Confirmed:
+          </div>
+          <div className='table-row-data'>
+            {totals[totals.length - 1].Confirmed.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Deaths:
-          {totals[totals.length - 1].Deaths.toLocaleString()}
+        <div className='table-row table-row-alt'>
+          <div className='table-row-label'>
+            Deaths:
+          </div>
+          <div className='table-row-data'>
+            {totals[totals.length - 1].Deaths.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Recovered:
-          {totals[totals.length - 1].Recovered.toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Recovered:
+          </div>
+          <div className='table-row-data'>
+            {totals[totals.length - 1].Recovered.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Active:
-          {totals[totals.length - 1].Active.toLocaleString()}
+        <div className='table-row table-row-alt'>
+          <div className='table-row-label'>
+            Active:
+          </div>
+          <div className='table-row-data'>
+            {totals[totals.length - 1].Active.toLocaleString()}
+          </div>
         </div>
       </div>
     </div>
