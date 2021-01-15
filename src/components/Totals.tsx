@@ -19,37 +19,61 @@ function Totals({totals}: TotalsProps) {
   return (
     <div>
       <div>
-        <div>
+        <div className='totals-subheader'>
           Today
         </div>
-        <div>
-          Confirmed:
-          {totals?.NewConfirmed.toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Confirmed:
+          </div>
+          <div className='table-row-data'>
+            {totals?.NewConfirmed.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Deaths:
-          {totals.NewDeaths.toLocaleString()}
+        <div className='table-row table-row-alt'>
+          <div className='table-row-label'>
+            Deaths:
+          </div>
+          <div className='table-row-data'>
+            {totals.NewDeaths.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Recovered:
-          {totals?.NewRecovered.toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Recovered:
+          </div>
+          <div className='table-row-data'>
+            {totals?.NewRecovered.toLocaleString()}
+          </div>
         </div>
       </div>
       <div>
-        <div>
+        <div className='totals-subheader'>
           All time
         </div>
-        <div>
-          Confirmed:
-          {totals?.TotalConfirmed.toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Confirmed:
+          </div>
+          <div className='table-row-data'>
+            {totals?.TotalConfirmed.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Deaths:
-          {totals.TotalDeaths.toLocaleString()}
+        <div className='table-row table-row-alt'>
+          <div className='table-row-label'>
+            Deaths:
+          </div>
+          <div className='table-row-data'>
+            {totals.TotalDeaths.toLocaleString()}
+          </div>
         </div>
-        <div>
-          Recovered:
-          {totals?.TotalRecovered.toLocaleString()}
+        <div className='table-row'>
+          <div className='table-row-label'>
+            Recovered:
+          </div>
+          <div className='table-row-data'>
+            {totals?.TotalRecovered.toLocaleString()}
+          </div>
         </div>
       </div>
     </div>

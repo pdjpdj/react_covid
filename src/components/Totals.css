@@ -1,0 +1,42 @@
+.totals-table {
+  border: 1px solid black;
+  width: 20rem;
+  margin: auto;
+}
+
+.totals-header {
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.totals-subheader {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.table-row {
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+  padding: 0.5rem 0;
+}
+
+.table-row-alt {
+  background-color: white;
+}
+
+.table-row-label {
+  text-align: right;
+  padding-right: 0.5rem;
+  width: 10rem;
+}
+
+.table-row-data {
+  padding-left: 0.5rem;
+  text-align: left;
+  width: 10rem;
+}

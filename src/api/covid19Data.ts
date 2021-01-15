@@ -15,16 +15,14 @@ const COUNTRIES_STORAGE_KEY = 'COUNTRIES_KEY';
 export async function fetchTotal(dispatch: React.Dispatch<TotalAction>) {
   dispatch(totalActionCreators.loading());
   try {
-    const today = new Date();
-    const yesterday = new Date(today.getMilliseconds() - 1000 * 24 * 60 * 60);
     const response = await fetch(
-      `${API_BASE_URL}world?from=${yesterday.toISOString()}&to=${today.toISOString()}`,
+      `${API_BASE_URL}summary`,
       {
         method: 'GET',
       },
     );
     const totals = await response.json();
-    dispatch(totalActionCreators.success(totals[0]));
+    dispatch(totalActionCreators.success(totals.Global));
   } catch (e) {
     dispatch(totalActionCreators.failure());
   }
