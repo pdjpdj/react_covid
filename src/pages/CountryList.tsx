@@ -46,7 +46,7 @@ const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
       <div className='totals-header'>
         Countries
       </div>
-      <div className='countries-list'>
+      <div>
         <div className='table-row table-row-alt country-item'>
           <input
             type='text'
@@ -55,6 +55,7 @@ const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
             onChange={handleInputChange}
             className='countries-input'/>
         </div>
+        <div className='countries-list'>
         {countries?.filter(country => country.Country.toLowerCase().indexOf(countryName.toLowerCase()) > -1)
         .sort((a, b) => a.Country > b.Country ? 1 : -1)
         .map((country, index) => (
@@ -65,6 +66,7 @@ const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
               {country.Country}
           </div>
         ))}
+        </div>
       </div>
     </div>
   );
