@@ -10,6 +10,6 @@
 
 .countries-input {
   justify-self: flex-start;
-  padding: 0.5rem 0;
-  width: -webkit-fill-available;
+  padding: 0.5rem 2px;
+  width: 18rem;
 }

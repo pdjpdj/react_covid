@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders country totals with data matches snapshot 1`] = `
+<div>
+  <table>
+    <caption
+      class="totals-subheader"
+    >
+      Latest (
+      Thu 21 Jan 2021
+      )
+    </caption>
+    <tbody>
+      <tr
+        class="table-row"
+      >
+        <td
+          class="table-row-label"
+        >
+          Confirmed:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          4,500
+        </td>
+      </tr>
+      <tr
+        class="table-row table-row-alt"
+      >
+        <td
+          class="table-row-label"
+        >
+          Deaths:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          133
+        </td>
+      </tr>
+      <tr
+        class="table-row"
+      >
+        <td
+          class="table-row-label"
+        >
+          Recovered:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          340
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <caption
+      class="totals-subheader"
+    >
+      All time
+    </caption>
+    <tbody>
+      <tr
+        class="table-row"
+      >
+        <td
+          class="table-row-label"
+        >
+          Confirmed:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          9,000
+        </td>
+      </tr>
+      <tr
+        class="table-row table-row-alt"
+      >
+        <td
+          class="table-row-label"
+        >
+          Deaths:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          256
+        </td>
+      </tr>
+      <tr
+        class="table-row"
+      >
+        <td
+          class="table-row-label"
+        >
+          Recovered:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          680
+        </td>
+      </tr>
+      <tr
+        class="table-row table-row-alt"
+      >
+        <td
+          class="table-row-label"
+        >
+          Active:
+        </td>
+        <td
+          class="table-row-data"
+        >
+          8,320
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

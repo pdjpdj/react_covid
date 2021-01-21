@@ -47,7 +47,7 @@ const CountryList: React.FC<CountryListProps> = (props: CountryListProps) => {
         Countries
       </div>
       <div>
-        <div className='table-row table-row-alt country-item'>
+        <div className='table-row table-row-alt country-input'>
           <input
             type='text'
             value={countryName}

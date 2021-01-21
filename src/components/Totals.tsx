@@ -10,7 +10,7 @@ function Totals({totals}: TotalsProps) {
     return (
       <div>
         <div>
-          No data for this country
+          No global data
         </div>
       </div>
     );
@@ -18,64 +18,68 @@ function Totals({totals}: TotalsProps) {
 
   return (
     <div>
-      <div>
-        <div className='totals-subheader'>
+      <table>
+        <caption className='totals-subheader'>
           Today
-        </div>
-        <div className='table-row'>
-          <div className='table-row-label'>
-            Confirmed:
-          </div>
-          <div className='table-row-data'>
-            {totals?.NewConfirmed.toLocaleString()}
-          </div>
-        </div>
-        <div className='table-row table-row-alt'>
-          <div className='table-row-label'>
-            Deaths:
-          </div>
-          <div className='table-row-data'>
-            {totals.NewDeaths.toLocaleString()}
-          </div>
-        </div>
-        <div className='table-row'>
-          <div className='table-row-label'>
-            Recovered:
-          </div>
-          <div className='table-row-data'>
-            {totals?.NewRecovered.toLocaleString()}
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className='totals-subheader'>
+        </caption>
+        <tbody>
+          <tr className='table-row'>
+            <td className='table-row-label'>
+              Confirmed:
+            </td>
+            <td className='table-row-data'>
+              {totals?.NewConfirmed.toLocaleString()}
+            </td>
+          </tr>
+          <tr className='table-row table-row-alt'>
+            <td className='table-row-label'>
+              Deaths:
+            </td>
+            <td className='table-row-data'>
+              {totals.NewDeaths.toLocaleString()}
+            </td>
+          </tr>
+          <tr className='table-row'>
+            <td className='table-row-label'>
+              Recovered:
+            </td>
+            <td className='table-row-data'>
+              {totals?.NewRecovered.toLocaleString()}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <caption className='totals-subheader'>
           All time
-        </div>
-        <div className='table-row'>
-          <div className='table-row-label'>
-            Confirmed:
-          </div>
-          <div className='table-row-data'>
-            {totals?.TotalConfirmed.toLocaleString()}
-          </div>
-        </div>
-        <div className='table-row table-row-alt'>
-          <div className='table-row-label'>
-            Deaths:
-          </div>
-          <div className='table-row-data'>
-            {totals.TotalDeaths.toLocaleString()}
-          </div>
-        </div>
-        <div className='table-row'>
-          <div className='table-row-label'>
-            Recovered:
-          </div>
-          <div className='table-row-data'>
-            {totals?.TotalRecovered.toLocaleString()}
-          </div>
-        </div>
-      </div>
+        </caption>
+        <tbody>
+          <tr className='table-row'>
+            <td className='table-row-label'>
+              Confirmed:
+            </td>
+            <td className='table-row-data'>
+              {totals?.TotalConfirmed.toLocaleString()}
+            </td>
+          </tr>
+          <tr className='table-row table-row-alt'>
+            <td className='table-row-label'>
+              Deaths:
+            </td>
+            <td className='table-row-data'>
+              {totals.TotalDeaths.toLocaleString()}
+            </td>
+          </tr>
+          <tr className='table-row'>
+            <td className='table-row-label'>
+              Recovered:
+            </td>
+            <td className='table-row-data'>
+              {totals?.TotalRecovered.toLocaleString()}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
